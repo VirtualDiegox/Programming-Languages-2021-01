@@ -1,0 +1,4 @@
+funcion_principal
+  imprimir (3+5);
+fin_principal
+
