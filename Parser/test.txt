@@ -1,4 +1,6 @@
 funcion_principal
-  imprimir(3+5);
+  imprimir (3+5);
+  entero a=0,b,c;
 fin_principal
+
 

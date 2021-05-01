@@ -29,7 +29,6 @@ def CALCULAR_PRIMEROS(no_terminal):
     REGLAS = [rule for rule in grammar if rule[0]==no_terminal]
     for R in REGLAS:
         REGLA = R[1]
-        
         conjunto_final = conjunto_final + PRIMEROS(REGLA)
     return conjunto_final
         
@@ -66,33 +65,47 @@ def PRIMEROS(REGLA):
  
 
 
-def SIGUIENTES(no_terminal):
+def SIGUIENTES(no_terminal,visited):
     follow_ = []
-
     RULES = grammar
+    if no_terminal in visited:
+        return follow_
     if no_terminal == start:
-        follow_.append('$')
+        follow_.append('EOF')
     for nt,rule in RULES:
+        
         if no_terminal in rule:
-            n = len(follow_)
+            
             following_str = rule[rule.index(no_terminal)+1:]
+            while True:
+                if following_str == []:
+                    if nt == no_terminal:
+                        break
+                    else:
+                        visited.append(no_terminal)
+                        follow_ = follow_ + SIGUIENTES(nt,visited)
+                else:
+                    follow_2 = PRIMEROS(following_str)
+                    if "EPSILON" in follow_2:
+                        follow_2.remove("EPSILON")
+                        follow_ = follow_ + follow_2
+                        follow_ = follow_ + SIGUIENTES(nt,visited)
+                    else:
+                        follow_ = follow_ + follow_2
+
+                follow_ = list(dict.fromkeys(follow_))
+
+                if no_terminal not in following_str:
+                    break
+                else:
+                    following_str = following_str[following_str.index(no_terminal)+1:]
             if following_str == []:
                 if nt == no_terminal:
                     continue
-                else:
-                    follow_ = follow_ + SIGUIENTES(nt)
-            else:
-                follow_2 = PRIMEROS(following_str)
-                if "EPSILON" in follow_2:
-                    follow_2.remove("EPSILON")
-                    follow_ = follow_ + follow_2
-                    follow_ = follow_ + SIGUIENTES(nt)
-                else:
-                    follow_ = follow_ + follow_2
+        
+        
+            
 
-            follow_ = list(dict.fromkeys(follow_))
-            if n != len(follow_):
-                return follow_
     return follow_
     
         
@@ -113,7 +126,8 @@ def PREDICT(A):
         
         C = PRIMEROS(REGLA)
         C.remove("EPSILON")
-        C_PREDICT = C + SIGUIENTES(nt_regla)
+        visited = []
+        C_PREDICT = C + SIGUIENTES(nt_regla,visited)
         return C_PREDICT
     else:
         C = PRIMEROS(REGLA)
@@ -129,27 +143,33 @@ def EMPAREJAR(token_esperado):
         errorSintactico([token_esperado])
 
 def errorSintactico(esperados):
-    print(token.value)
-    print(token.type)
+    print("<{},{}> Error sintactico: se encontro: \"{}\"; se esperaba:".format(token.line,token.column,token.type))
     print(esperados)
-    print("Error sintactico")
     exit()
 
 def State(n_t):
-    
+
     
     PREDICCIONES = []
     REGLAS = []
-    for nt,rule in grammar:
-        
+
+    for nt,rule in grammar:   
         if nt == n_t:
             REGLAS.append([nt,rule])
             PREDICCIONES.append(PREDICT([nt,rule]))
+    
+    terminals_regla = []
+    for p in PREDICCIONES:
+        terminals_regla = terminals_regla + p
+
     for p in range(0,len(PREDICCIONES)):
         if token.type in PREDICCIONES[p]:
             RULE = REGLAS[p][1]
+            print(REGLAS[p])
             for part in RULE:
                 if part in no_Terminals:
+                    print("ejecuto")
+                    print(part)
                     State(part)
                 if part in terminals:
                     print("empareje")
@@ -158,10 +178,10 @@ def State(n_t):
                 if part == "EPSILON":
                     pass
             return
-    terminals_regla = []
-    for p in PREDICCIONES:
-        terminals_regla = terminals_regla + p
+    #print(n_t)
+    #print(PREDICCIONES)
     errorSintactico(terminals_regla)
+    
 
 def print_predictions():
 
@@ -229,7 +249,12 @@ start = no_Terminals[0]
 
 #get first tokens
 
-
+for rule in no_Terminals:
+    print(rule)
+    visited = []
+    #print(PRIMEROS(rule[1]))
+    print(SIGUIENTES(rule,visited))
+    #print(PREDICT(rule))
 
 #begin
 State(start)
@@ -239,11 +264,10 @@ State(start)
 
 
 
-
     
 
 if token.type != "EOF":
-    print(token)
     errorSintactico(["EOF"])
 else:
     print("El analisis sintactico ha finalizado exitosamente.")
+
