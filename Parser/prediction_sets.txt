@@ -1,0 +1,174 @@
+PROGRAMA -> entero real caracter cadena booleano id funcion estructura funcion_principal 
+DECLARACIONES_GLOBALES -> entero real caracter cadena booleano id 
+DECLARACIONES_GLOBALES -> funcion 
+DECLARACIONES_GLOBALES -> estructura 
+DECLARACIONES_GLOBALES -> funcion_principal EOF
+FUNCION_PRINCIPAL -> funcion_principal
+DECLARACION_FUNCION -> funcion 
+PARAMETROS_FUNCION -> entero real caracter cadena booleano id 
+PARAMETROS_FUNCION -> tk_par_der 
+MAS_PARAMETROS_FUNCION -> tk_coma 
+MAS_PARAMETROS_FUNCION -> tk_par_der 
+BLOQUE_INSTRUCCIONES_FUNCION -> leer 
+BLOQUE_INSTRUCCIONES_FUNCION -> imprimir 
+BLOQUE_INSTRUCCIONES_FUNCION -> entero real caracter cadena booleano id 
+BLOQUE_INSTRUCCIONES_FUNCION -> si 
+BLOQUE_INSTRUCCIONES_FUNCION -> seleccionar 
+BLOQUE_INSTRUCCIONES_FUNCION -> mientras 
+BLOQUE_INSTRUCCIONES_FUNCION -> hacer 
+BLOQUE_INSTRUCCIONES_FUNCION -> para 
+BLOQUE_INSTRUCCIONES_FUNCION -> retornar 
+BLOQUE_INSTRUCCIONES_FUNCION -> romper 
+BLOQUE_INSTRUCCIONES_FUNCION -> fin_funcion si_no fin_si caso defecto fin_seleccionar fin_mientras fin_para 
+DECLARACION_ESTRUCTURA -> estructura 
+DATOS_ESTRUCTURA -> entero real caracter cadena booleano id fin_estructura
+COMPLEMENTO_DATOS_ESTRUCTURA -> entero real caracter cadena booleano id 
+COMPLEMENTO_DATOS_ESTRUCTURA -> fin_estructura 
+DECLARACION_VARIABLES_GLOBALES -> entero real caracter cadena booleano id 
+CONDICIONAL_SI_FUNCION -> si 
+COMPLEMENTO_CONDICIONAL_SI_FUNCION -> si_no 
+COMPLEMENTO_CONDICIONAL_SI_FUNCION -> fin_si 
+SELECCIONAR_FUNCION -> seleccionar 
+BLOQUE_SELECCIONAR_FUNCION -> caso 
+BLOQUE_SELECCIONAR_FUNCION -> defecto 
+COMPLEMENTO_BLOQUE_SELECCIONAR_FUNCION -> caso 
+COMPLEMENTO_BLOQUE_SELECCIONAR_FUNCION -> defecto 
+COMPLEMENTO_BLOQUE_SELECCIONAR_FUNCION -> fin_seleccionar 
+CICLO_MIENTRAS_FUNCION -> mientras 
+CICLO_HACER_MIENTRAS_FUNCION -> hacer 
+BLOQUE_INSTRUCCIONES_HACER_MIENTRAS_FUNCION -> leer imprimir entero real caracter cadena booleano id si seleccionar hacer para retornar romper 
+BLOQUE_INSTRUCCIONES_HACER_MIENTRAS_FUNCION -> mientras 
+AUXILIAR_BLOQUE_INSTRUCCIONES_HACER_MIENTRAS_FUNCION -> hacer 
+AUXILIAR_BLOQUE_INSTRUCCIONES_HACER_MIENTRAS_FUNCION -> tk_pyc 
+COMPLEMENTO_BLOQUE_INSTRUCCIONES_HACER_MIENTRAS_FUNCION -> leer 
+COMPLEMENTO_BLOQUE_INSTRUCCIONES_HACER_MIENTRAS_FUNCION -> imprimir 
+COMPLEMENTO_BLOQUE_INSTRUCCIONES_HACER_MIENTRAS_FUNCION -> entero real caracter cadena booleano id 
+COMPLEMENTO_BLOQUE_INSTRUCCIONES_HACER_MIENTRAS_FUNCION -> si 
+COMPLEMENTO_BLOQUE_INSTRUCCIONES_HACER_MIENTRAS_FUNCION -> seleccionar 
+COMPLEMENTO_BLOQUE_INSTRUCCIONES_HACER_MIENTRAS_FUNCION -> hacer 
+COMPLEMENTO_BLOQUE_INSTRUCCIONES_HACER_MIENTRAS_FUNCION -> para 
+COMPLEMENTO_BLOQUE_INSTRUCCIONES_HACER_MIENTRAS_FUNCION -> retornar 
+COMPLEMENTO_BLOQUE_INSTRUCCIONES_HACER_MIENTRAS_FUNCION -> romper 
+CICLO_PARA_FUNCION -> para 
+CICLO_PARA_FUNCION_1 -> entero real caracter cadena booleano 
+CICLO_PARA_FUNCION_1 -> id 
+COMPLEMENTO_CICLO_PARA_FUNCION_1 -> id 
+COMPLEMENTO_CICLO_PARA_FUNCION_1 -> tk_asig 
+ROMPER -> romper 
+RETORNAR -> retornar 
+DECLARACION_O_ASIGNACION_O_LLAMADO -> entero real caracter cadena booleano 
+DECLARACION_O_ASIGNACION_O_LLAMADO -> id 
+COMPLEMENTO_DECLARACION_O_ASIGNACION_O_LLAMADO -> tk_punto 
+COMPLEMENTO_DECLARACION_O_ASIGNACION_O_LLAMADO -> tk_asig 
+COMPLEMENTO_DECLARACION_O_ASIGNACION_O_LLAMADO -> tk_par_izq 
+COMPLEMENTO_DECLARACION_O_ASIGNACION_O_LLAMADO -> id 
+IMPRIMIR -> imprimir 
+PARAMETROS_IMPRIMIR -> tk_par_izq tk_entero tk_real tk_caracter tk_cadena id verdadero falso tk_menos tk_neg 
+MAS_PARAMETROS_IMPRIMIR -> tk_coma 
+MAS_PARAMETROS_IMPRIMIR -> tk_par_der 
+LEER -> leer 
+DECLARACION_VARIABLE -> id 
+MAS_DECLARACION_VARIABLE -> tk_coma 
+MAS_DECLARACION_VARIABLE -> tk_pyc 
+VARIABLE -> id 
+ASIGNACION_VARIABLE -> tk_asig 
+ASIGNACION_VARIABLE -> tk_pyc tk_coma 
+LLAMADO_FUNCION -> tk_par_izq 
+PARAMETROS_LLAMADO_FUNCION -> tk_par_izq tk_entero tk_real tk_caracter tk_cadena id verdadero falso tk_menos tk_mas tk_neg 
+PARAMETROS_LLAMADO_FUNCION -> tk_par_der 
+MAS_PARAMETROS_LLAMADO_FUNCION -> tk_coma 
+MAS_PARAMETROS_LLAMADO_FUNCION -> tk_par_der 
+IDENTIFICADOR -> id 
+COMPLEMENTO_IDENTIFICADOR -> tk_punto 
+COMPLEMENTO_IDENTIFICADOR -> tk_par_der 
+IDENTIFICADOR_DATO_ESTRUCTURA -> tk_punto 
+COMPLEMENTO_IDENTIFICADOR_DATO_ESTRUCTURA -> tk_punto 
+COMPLEMENTO_IDENTIFICADOR_DATO_ESTRUCTURA -> tk_asig tk_pyc tk_y tk_o tk_igual tk_dif tk_menor tk_mayor tk_menor_igual tk_mayor_igual tk_mas tk_menos tk_mult tk_mod tk_div tk_par_der tk_dosp tk_coma 
+TIPO_DATO -> entero real caracter cadena booleano 
+TIPO_DATO -> id 
+TIPO_DATO_PRIMITIVO -> entero 
+TIPO_DATO_PRIMITIVO -> real 
+TIPO_DATO_PRIMITIVO -> caracter 
+TIPO_DATO_PRIMITIVO -> cadena 
+TIPO_DATO_PRIMITIVO -> booleano 
+BLOQUE_INSTRUCCIONES -> leer 
+BLOQUE_INSTRUCCIONES -> imprimir 
+BLOQUE_INSTRUCCIONES -> entero real caracter cadena booleano id 
+BLOQUE_INSTRUCCIONES -> si 
+BLOQUE_INSTRUCCIONES -> seleccionar 
+BLOQUE_INSTRUCCIONES -> mientras 
+BLOQUE_INSTRUCCIONES -> hacer 
+BLOQUE_INSTRUCCIONES -> para 
+BLOQUE_INSTRUCCIONES -> romper 
+BLOQUE_INSTRUCCIONES -> fin_principal si_no fin_si caso defecto fin_seleccionar fin_mientras fin_para 
+CONDICIONAL_SI -> si 
+COMPLEMENTO_CONDICIONAL_SI -> si_no 
+COMPLEMENTO_CONDICIONAL_SI -> fin_si 
+SELECCIONAR -> seleccionar 
+BLOQUE_SELECCIONAR -> caso 
+BLOQUE_SELECCIONAR -> defecto 
+COMPLEMENTO_BLOQUE_SELECCIONAR -> caso 
+COMPLEMENTO_BLOQUE_SELECCIONAR -> defecto 
+COMPLEMENTO_BLOQUE_SELECCIONAR -> fin_seleccionar 
+CICLO_MIENTRAS -> mientras 
+CICLO_HACER_MIENTRAS -> hacer 
+BLOQUE_INSTRUCCIONES_HACER_MIENTRAS -> leer imprimir entero real caracter cadena booleano id si seleccionar hacer para romper 
+BLOQUE_INSTRUCCIONES_HACER_MIENTRAS -> mientras 
+AUXILIAR_BLOQUE_INSTRUCCIONES_HACER_MIENTRAS -> hacer 
+AUXILIAR_BLOQUE_INSTRUCCIONES_HACER_MIENTRAS -> tk_pyc 
+COMPLEMENTO_BLOQUE_INSTRUCCIONES_HACER_MIENTRAS -> leer 
+COMPLEMENTO_BLOQUE_INSTRUCCIONES_HACER_MIENTRAS -> imprimir 
+COMPLEMENTO_BLOQUE_INSTRUCCIONES_HACER_MIENTRAS -> entero real caracter cadena booleano id 
+COMPLEMENTO_BLOQUE_INSTRUCCIONES_HACER_MIENTRAS -> si 
+COMPLEMENTO_BLOQUE_INSTRUCCIONES_HACER_MIENTRAS -> seleccionar 
+COMPLEMENTO_BLOQUE_INSTRUCCIONES_HACER_MIENTRAS -> hacer 
+COMPLEMENTO_BLOQUE_INSTRUCCIONES_HACER_MIENTRAS -> para 
+COMPLEMENTO_BLOQUE_INSTRUCCIONES_HACER_MIENTRAS -> romper 
+CICLO_PARA -> para 
+CICLO_PARA_1 -> entero real caracter cadena booleano 
+CICLO_PARA_1 -> id 
+COMPLEMENTO_CICLO_PARA_1 -> id 
+COMPLEMENTO_CICLO_PARA_1 -> tk_asig 
+EXPRESION -> tk_par_izq tk_entero tk_real tk_caracter tk_cadena id verdadero falso tk_menos tk_neg 
+COMPLEMENTO_EXPRESION -> tk_y 
+COMPLEMENTO_EXPRESION -> tk_o 
+COMPLEMENTO_EXPRESION -> tk_igual tk_dif tk_menor tk_mayor tk_menor_igual tk_mayor_igual tk_mas tk_menos tk_mult tk_mod tk_div tk_par_der tk_dosp tk_pyc tk_coma 
+EXPRESION_1 -> tk_igual 
+EXPRESION_1 -> tk_dif 
+EXPRESION_1 -> tk_menor tk_mayor tk_menor_igual tk_mayor_igual tk_mas tk_menos tk_mult tk_mod tk_div tk_par_der tk_dosp tk_pyc tk_coma 
+EXPRESION_2 -> tk_menor 
+EXPRESION_2 -> tk_mayor 
+EXPRESION_2 -> tk_menor_igual 
+EXPRESION_2 -> tk_mayor_igual 
+EXPRESION_2 -> tk_mas tk_menos tk_mult tk_mod tk_div tk_par_der tk_dosp tk_pyc tk_coma 
+COMPLEMENTO_EXPRESION_1_2 -> tk_y 
+COMPLEMENTO_EXPRESION_1_2 -> tk_o 
+COMPLEMENTO_EXPRESION_1_2 -> tk_mas 
+COMPLEMENTO_EXPRESION_1_2 -> tk_menos 
+COMPLEMENTO_EXPRESION_1_2 -> tk_mult 
+COMPLEMENTO_EXPRESION_1_2 -> tk_mod 
+COMPLEMENTO_EXPRESION_1_2 -> tk_div 
+COMPLEMENTO_EXPRESION_1_2 -> tk_par_der tk_dosp tk_pyc tk_coma 
+EXPRESION_3 -> tk_mas 
+EXPRESION_3 -> tk_menos 
+EXPRESION_3 -> tk_mult tk_mod tk_div tk_par_der tk_dosp tk_pyc tk_coma 
+EXPRESION_4 -> tk_mult 
+EXPRESION_4 -> tk_mod 
+EXPRESION_4 -> tk_div 
+EXPRESION_4 -> tk_par_der tk_dosp tk_pyc tk_coma 
+TERMINO -> tk_par_izq 
+TERMINO -> tk_entero tk_real tk_caracter tk_cadena 
+TERMINO -> id 
+TERMINO -> verdadero 
+TERMINO -> falso 
+TERMINO -> tk_menos 
+TERMINO -> tk_mas 
+TERMINO -> tk_neg 
+IDENTIFICADOR_O_LLAMADO -> id 
+COMPLEMENTO_IDENTIFICADOR_O_LLAMADO -> tk_par_izq 
+COMPLEMENTO_IDENTIFICADOR_O_LLAMADO -> tk_punto 
+COMPLEMENTO_IDENTIFICADOR_O_LLAMADO -> tk_y tk_o tk_igual tk_dif tk_menor tk_mayor tk_menor_igual tk_mayor_igual tk_mas tk_menos tk_mult tk_mod tk_div tk_par_der tk_dosp tk_pyc tk_coma 
+CONSTANTE -> tk_entero 
+CONSTANTE -> tk_real 
+CONSTANTE -> tk_caracter 
+CONSTANTE -> tk_cadena 

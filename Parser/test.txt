@@ -1,6 +1,9 @@
+funcion entero sum(entero a, entero b) hacer
+    a = a + b;
+fin_funcion
+
 funcion_principal
-  imprimir (3+5);
-  entero a=0,b,c;
+
+    imprimir (sum(3,5));
+
 fin_principal
-
-

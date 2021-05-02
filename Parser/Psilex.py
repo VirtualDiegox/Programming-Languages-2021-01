@@ -1,7 +1,7 @@
 import lex as lex
 from lex import TOKEN
 import io, sys
-#lines for colab
+#lines for test local
 test = open('test.txt', 'r')
 sys.stdin = io.StringIO(test.read())
 
@@ -127,4 +127,4 @@ while True:
     if tok.type in types_wv:
         Tokens.append(Token(tok.type, tok.value, tok.lineno, column))
     else:
-        Tokens.append(Token(tok.type, None, tok.lineno, column))
+        Tokens.append(Token(tok.type, tok.value, tok.lineno, column))
